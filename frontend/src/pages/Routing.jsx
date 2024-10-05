@@ -10,7 +10,7 @@ function Routing() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/signup" element={<Login />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
     </div>
