@@ -66,9 +66,7 @@ function Post() {
                 <p className="font-medium">{items.work}</p>
               </div>
               <div className="pl-2 mt-3">
-                <h1 className="text-[25px] font-semibold">
-                  Prompt Engineering Is Dead: DSPy <br /> Is New Paradigm
-                </h1>
+                <h1 className="text-[25px] font-semibold">{items.Title}</h1>
                 <p className="font-light">{items.overview}</p>
               </div>
             </div>

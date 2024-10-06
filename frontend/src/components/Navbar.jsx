@@ -38,7 +38,7 @@ function Navbar() {
         </div>
 
         <div className="flex gap-8  mt-8 ">
-          <a href="/write">
+          <a href="/home/write">
             {" "}
             <h1 className="font-thin flex gap-2 mt-1 text-slate-500 ">
               <TfiWrite className=" h-9 w-6 mt-[-7px] " /> Write

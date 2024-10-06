@@ -9,7 +9,7 @@ function Sidebar() {
             <p className="mt-4 text-slate-600">New Writer</p>
             <p className="mt-2 text-slate-600">Expert writing advice</p>
             <p className="mt-2 text-slate-600">Grow your readership</p>
-            <a href="/write">
+            <a href="/home/write">
               <button className="bg-black text-white rounded-2xl mt-2 w-40 h-10 ">
                 Start writing
               </button>

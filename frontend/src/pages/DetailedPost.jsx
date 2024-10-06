@@ -22,7 +22,7 @@ function DetailedPost() {
       username: "Siddhant Ach",
       profilePic: person2,
       work: "DevOps",
-      Title: "How to Think About Your Career",
+      Title: "How to Think About Your Carrers",
       overview: "It’s not that I didn’t think about my career at all. ",
       story:
         "When Covid hit and I had to work from home, I took over the cooking. My wife cooked all the weekday meals for the first 30 years of our marriage; now I have been cooking for the past 4. I had big shoes to fill, and initially, I was quite intimidated. Then I realized that I could cook like a graphic designer. I started treating each meal like a new design project with research. I find the right recipe. (I am completely hooked on the New York Times cooking app). Then I think about my audience. What does my wife like to eat? I collect the necessary ingredients and get to know the parameters of the project by reading all the instructions. As a graphic designer, I’m good at following instructions, using a grid to create layouts and adding just the right flair (herbs) to each project Then I realized that I could cook like a graphic designer. I started treating each meal like a new design project with research. I find the right recipe. (I am completely hooked on the New York Times cooking app). Then I think about my audience. What does my wife like to eat? I collect the necessary ingredients and get to know the parameters of the project by reading all the instructions. As a graphic designer, I’m good at following instructions, using a grid to create layouts and adding just the right flair (herbs) to each project.",
