@@ -3,8 +3,8 @@ import Landing from "./Landing";
 import Signup from "./Signup";
 import Login from "./Login";
 import Homepage from "./Homepage";
-import Write from "./Write";
 import DetailedPost from "./DetailedPost";
+import WritePage from "./Writepage";
 
 function Routing() {
   return (
@@ -16,7 +16,7 @@ function Routing() {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Homepage />} />
           <Route path="/home/detailedpost/:id" element={<DetailedPost />} />
-          <Route path="/write" element={<Write />} />
+          <Route path="/write" element={<WritePage />} />
         </Routes>
       </Router>
     </div>

@@ -12,11 +12,11 @@ function Landing() {
             {" "}
             <h1>Our story</h1>
           </a>
-          <a href="/Ourstory">
+          <a href="#">
             {" "}
             <h1>Membership</h1>
           </a>
-          <a href="/Ourstory">
+          <a href="/write">
             {" "}
             <h1>Write</h1>
           </a>
