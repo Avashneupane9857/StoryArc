@@ -41,7 +41,7 @@ function Signup() {
               className="bg-[#F2F2F2] focus:outline-none focus:border-2 focus:bg-white focus:border-black rounded-md w-60 h-8 mt-3"
               type="text"
             />
-            <a href="#">
+            <a href="/login">
               <button className="bg-black text-white rounded-2xl w-40 h-10 mt-8">
                 Sign Up
               </button>
