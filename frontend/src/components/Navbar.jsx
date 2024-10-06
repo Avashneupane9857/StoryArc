@@ -4,8 +4,8 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 import { TfiWrite } from "react-icons/tfi";
 function Navbar() {
   return (
-    <div>
-      <header className="w-[98%]   mx-auto flex justify-between  ">
+    <div className="">
+      <header className="w-[98%]    mx-auto flex justify-between  ">
         <div className="mt-5 flex justify-start">
           <img className="w-44 h-12" src={logo} alt="" />
           <div className="bg-[#F9F9F9]  rounded-2xl h-9 mt-2 w-56">
