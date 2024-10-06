@@ -13,7 +13,7 @@ function Post() {
       img: blog1,
     },
     {
-      id: 3,
+      id: 2,
       username: "Siddhu Ach",
       profilePic: person2,
       work: "Backend",
@@ -22,7 +22,7 @@ function Post() {
       img: blog2,
     },
     {
-      id: 2,
+      id: 3,
       username: "Jafroz Ahamed",
       profilePic: person3,
       work: "Trader",
@@ -51,7 +51,7 @@ function Post() {
         <div
           key={items.id}
           className="mt-7 cursor-pointer"
-          onClick={() => goToPost(`/home/detailedpost/:${items.id}`)}
+          onClick={() => goToPost(`/home/detailedpost/${items.id}`)}
         >
           <div className="flex gap-20">
             <div>

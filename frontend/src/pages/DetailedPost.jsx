@@ -44,42 +44,51 @@ function DetailedPost() {
   ];
   const { id } = useParams();
   console.log(id);
+  const paramId = parseInt(id);
+
+  console.log(paramId);
+
+  const matchId = detailedpost.find((post) => post.id === paramId);
+  if (!matchId) {
+    return <p>Post not found</p>;
+  }
+
   return (
     <section className="min-h-screen">
       <Navbar />
-      {detailedpost.map((items) => (
-        <div key={items.id} className="w-[50%] mx-auto mt-32">
-          <h1 className="text-black text-[40px] font-bold">{items.Title}</h1>
-          <div className="flex gap-2 mt-6">
-            <img
-              className="w-14 h-14 rounded-full mt-[-4px]"
-              src={items.profilePic}
-              alt=""
-            />
-            <h1 className="font-light">{items.username}</h1>
-            <p className="font-light">in</p>
-            <p className="font-medium">{items.work}</p>
-          </div>
-          <div className=" pl-16 mt-[-19px]">
-            <button className="text-red-700 text-base border-[1px] w-16 border-black rounded-xl">
-              Follow
-            </button>
-          </div>
-          <img className="mt-6" src={items.img} alt="" />
-          <h1 className="text-[30px] mt-10 mb-10 text-center font-medium">
-            {items.overview}
-          </h1>
-          <div className="text-[20px] text-slate-600">
-            <p>{items.story}</p>
-          </div>
-          <div>
-            <h1 className="font-extrabold text-2xl text-center mt-10">
-              Recommended from Story Arc
-            </h1>
-            <Post />
-          </div>
+
+      <div key={matchId.id} className="w-[50%] mx-auto mt-32">
+        <h1 className="text-black text-[40px] font-bold">{matchId.Title}</h1>
+        <div className="flex gap-2 mt-6">
+          <img
+            className="w-14 h-14 rounded-full mt-[-4px]"
+            src={matchId.profilePic}
+            alt=""
+          />
+          <h1 className="font-light">{matchId.username}</h1>
+          <p className="font-light">in</p>
+          <p className="font-medium">{matchId.work}</p>
         </div>
-      ))}
+        <div className=" pl-16 mt-[-19px]">
+          <button className="text-red-700 text-base border-[1px] w-16 border-black rounded-xl">
+            Follow
+          </button>
+        </div>
+        <img className="mt-6" src={matchId.img} alt="" />
+        <h1 className="text-[30px] mt-10 mb-10 text-center font-medium">
+          {matchId.overview}
+        </h1>
+        <div className="text-[20px] text-slate-600">
+          <p>{matchId.story}</p>
+        </div>
+        <div>
+          <h1 className="font-extrabold text-2xl text-center mt-10">
+            Recommended from Story Arc
+          </h1>
+          <Post />
+        </div>
+      </div>
+
       <div className="bg-black h-[1px]"></div>
       <div className="flex justify-center text-sm gap-12 h-12 mt-5 font-extralight">
         <a href="">
