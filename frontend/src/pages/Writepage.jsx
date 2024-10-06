@@ -15,7 +15,7 @@ function WritePage() {
   function handlePublish() {
     setIsPublish((prev) => !prev);
   }
-
+  
   const [isPublish, setIsPublish] = useState(false);
   const [title, setTitle] = useState("");
 
