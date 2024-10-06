@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { blog1, blog2, blog3, person1, person2, person3 } from "../assets";
 
 function Post() {
@@ -39,11 +40,19 @@ function Post() {
       img: blog1,
     },
   ];
+  const navigate = useNavigate();
+  function goToPost(path) {
+    navigate(path);
+  }
 
   return (
-    <section className="">
+    <section>
       {posts.map((items) => (
-        <div key={items.id} className="mt-7">
+        <div
+          key={items.id}
+          className="mt-7 cursor-pointer"
+          onClick={() => goToPost(`/home/detailedpost/:${items.id}`)}
+        >
           <div className="flex gap-20">
             <div>
               <div className="flex gap-2">

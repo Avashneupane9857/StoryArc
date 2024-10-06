@@ -7,7 +7,7 @@ function Homepage() {
     <div>
       <Navbar />
       <div className="w-[73%] mx-auto flex  mt-28">
-        <div className="w-[70%]">
+        <div className="w-[70%] ">
           <Post />
         </div>
         <div>
