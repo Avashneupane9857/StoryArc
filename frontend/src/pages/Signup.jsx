@@ -1,6 +1,11 @@
 import Landing from "./Landing";
 
 function Signup() {
+  //   const users = {
+  //     name: "",
+  //     email: "",
+  //     password: "",
+  //   };
   return (
     <div className="relative">
       <div className="opacity-10 ">
@@ -21,7 +26,7 @@ function Signup() {
             <h1 className="font-extralight">account</h1>
             <h1 className="mt-8 font-normal">Enter your name</h1>
             <input
-              value={name}
+              value={""}
               onChange={""}
               className="bg-[#F2F2F2] focus:outline-none focus:border-2 focus:bg-white focus:border-black rounded-md w-60 h-8 mt-3"
               type="text"
