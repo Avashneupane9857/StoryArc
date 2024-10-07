@@ -1,6 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { hero, logo } from "../assets";
 
 function Landing() {
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate("/signup");
+  }
   return (
     <main className="bg-[#F6F4ED]">
       <header className="w-[90%]   mx-auto flex justify-between  ">
@@ -43,7 +48,10 @@ function Landing() {
           <p className="mt-11 text-2xl font-serif font-thin">
             A place to read, write, and deepen your understanding
           </p>
-          <button className="mt-11 bg-black text-white rounded-2xl w-44 h-12">
+          <button
+            onClick={handleClick}
+            className="mt-11 bg-black text-white rounded-2xl w-44 h-12"
+          >
             Start reading
           </button>
         </div>
