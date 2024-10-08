@@ -1,11 +1,31 @@
+import { useState } from "react";
 import Landing from "./Landing";
-
+import axios from "axios";
 function Signup() {
-  //   const users = {
-  //     name: "",
-  //     email: "",
-  //     password: "",
-  //   };
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSignup = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/api/v1/auth/signup",
+        {
+          name,
+          email,
+          password,
+        }
+      );
+      if (response.status == 200) {
+        console.log("Signup successful:", response.data);
+        window.location.href = "/login";
+      }
+    } catch (error) {
+      console.error(
+        "Signup failed:",
+        error.response ? error.response.data : error.message
+      );
+    }
+  };
   return (
     <div className="relative">
       <div className="opacity-10 ">
@@ -26,26 +46,32 @@ function Signup() {
             <h1 className="font-extralight">account</h1>
             <h1 className="mt-8 font-normal">Enter your name</h1>
             <input
-              value={""}
-              onChange={""}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="bg-[#F2F2F2] focus:outline-none focus:border-2 focus:bg-white focus:border-black rounded-md w-60 h-8 mt-3"
               type="text"
             />
             <h1 className="mt-8 font-normal">Enter your email</h1>
             <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="bg-[#F2F2F2] focus:outline-none focus:border-2 focus:bg-white focus:border-black rounded-md w-60 h-8 mt-3"
               type="text"
             />
             <h1 className="mt-8 font-normal">Enter your password</h1>
             <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="bg-[#F2F2F2] focus:outline-none focus:border-2 focus:bg-white focus:border-black rounded-md w-60 h-8 mt-3"
               type="text"
             />
-            <a href="/login">
-              <button className="bg-black text-white rounded-2xl w-40 h-10 mt-8">
-                Sign Up
-              </button>
-            </a>
+
+            <button
+              className="bg-black text-white rounded-2xl w-40 h-10 mt-8"
+              onClick={handleSignup}
+            >
+              Sign Up
+            </button>
           </div>
         </div>
       </div>

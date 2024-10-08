@@ -10,8 +10,8 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
-    # environment:
-    #   DATABASE_URL: "postgresql://user:password@db:5432/mydb"
+    environment:
+      DATABASE_URL: "postgresql://courseapi_owner:xE5SptfcHIV0@ep-white-wave-a52uclp6-pooler.us-east-2.aws.neon.tech/medium?sslmode=require"
     depends_on:
       - backend
 
@@ -22,7 +22,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      DATABASE_URL: "postgresql://user:password@db:5432/mydb"
+      DATABASE_URL: "postgresql://courseapi_owner:xE5SptfcHIV0@ep-white-wave-a52uclp6-pooler.us-east-2.aws.neon.tech/medium?sslmode=require"
     depends_on:
       - db
 

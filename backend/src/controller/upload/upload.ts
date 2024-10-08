@@ -21,7 +21,7 @@ export const uploder = async (req: Request, res: Response) => {
 
         console.log('Received File (Base64):');
 
-        await cloudinary.config(config);
+        cloudinary.config(config);
 
         console.log("Cloudinary Configured");
 
