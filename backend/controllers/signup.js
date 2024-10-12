@@ -22,9 +22,12 @@ export const signup = async (req, res) => {
     });
     const token = jwt.sign(user.password, secret);
 
-    res
+    return res
       .status(200)
-      .json({ msg: `token is produced and user added to database ${token}` });
+      .json(
+        { msg: `token is produced and user added to database ${token}` },
+        { token: token }
+      );
   } catch (e) {
     console.log(e);
     res.status(500).json({ msg: "Internal server error" });

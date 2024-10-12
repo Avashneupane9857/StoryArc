@@ -15,4 +15,15 @@ model User {
   email    String  @unique
   name     String?
   password String
+  img      Bytes?
+}
+
+model Blog {
+  id          Int      @id @default(autoincrement())
+  title       String   @db.VarChar(255)
+  description String   @db.Text
+  overview    String   @db.VarChar(500)
+  // coverImage  Bytes?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
