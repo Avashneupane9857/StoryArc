@@ -9,21 +9,18 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setErrorMessage(""); // Clear any previous error messages
+    setErrorMessage("");
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/v1/auth/signin",
-        {
-          email: email,
-          password: password,
-        }
-      );
+      const response = await axios.post("http://localhost:3001/api/v1/signin", {
+        email: email,
+        password: password,
+      });
 
       // Handle successful login here
       if (response.status === 200) {
         console.log("Login successful", response.data);
-        window.location.href = "/home"; // Redirect to home page
+        window.location.href = "/home";
       }
     } catch (error) {
       console.error("Error logging in:", error);

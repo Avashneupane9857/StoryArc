@@ -7,14 +7,11 @@ function Signup() {
   const [password, setPassword] = useState("");
   const handleSignup = async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/v1/auth/signup",
-        {
-          name,
-          email,
-          password,
-        }
-      );
+      const response = await axios.post("http://localhost:3001/api/v1/signup", {
+        name,
+        email,
+        password,
+      });
       if (response.status == 200) {
         console.log("Signup successful:", response.data);
         window.location.href = "/login";
