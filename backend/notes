@@ -1,0 +1,12 @@
+postgresql://neondb_owner:PAmt5hZ6neId@ep-curly-dream-a55xh83a.us-east-2.aws.neon.tech/neondb?sslmode=require
+
+
+
+
+
+
+
+Connetion pool 
+
+
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiOTcwY2M0NzUtNmQ3Yy00NGRmLWE5ZTktNjEzNTE1MGZhOGQ0IiwidGVuYW50X2lkIjoiMGRhMjU1OWU2ZTA3NGVmNGI5MzQ0ZDY4YjM0NGZiN2Y3YzJjMjgyZDc4ZTUyZmFmNTdlZDFhOGYxOGRmMDg1YiIsImludGVybmFsX3NlY3JldCI6IjhmM2Q1MGY3LWUyMmYtNGQ5NC1iMTI3LWZhYzRkM2M4ODcwZiJ9.FKl3QIl8ooZR2wI3D9pcOeZXT_F3y-5GPhUtr_ID2uE"
