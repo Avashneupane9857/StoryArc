@@ -2,7 +2,7 @@
 import { withAccelerate } from "@prisma/extension-accelerate";
 
 import { PrismaClient } from '@prisma/client/edge'
-
+import {createBlogInput,updateBlogInput} from "@avashnp/common"
 import { Hono } from "hono";
 import { verify } from "hono/jwt";
 
@@ -43,7 +43,11 @@ blogRouter.post('/',async(c)=>{
     const prisma = new PrismaClient({
       datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate())
-
+  const { success } = createBlogInput.safeParse(body);
+	if (!success) {
+		c.status(400);
+		return c.json({ error: "invalid input" });
+	}
   const post=await prisma.post.create({
     data:{
        title:body.title,
@@ -59,24 +63,40 @@ blogRouter.post('/',async(c)=>{
   
   
   blogRouter.put('/',async(c)=>{
-    const body=await c.req.json()
+    const userId = c.get('userId');
+    const prisma = new PrismaClient({
+      datasourceUrl: c.env?.DATABASE_URL	,
+    }).$extends(withAccelerate());
+  
+    const body = await c.req.json();
+    const { success } = updateBlogInput.safeParse(body);
+    if (!success) {
+      c.status(400);
+      return c.json({ error: "invalid input" });
+    }
+  
+    prisma.post.update({
+      where: {
+        id: body.id,
+        authorId: userId
+      },
+      data: {
+        title: body.title,
+        content: body.content
+      }
+    });
+  
+    return c.text('updated post');
+  });
+
+  
+  
+  blogRouter.get('bulk',async(c)=>{
     const prisma = new PrismaClient({
       datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate())
-
-  const post=await prisma.post.update({
-   where:{
-    id:body.id
-   },
-   data:{
-    title:body.title,
-    content:body.content, 
-   }
-  })
-  return c.json({
-    id:post.id
-  })
-    
+const allBlog=await prisma.post.findMany()
+    return c.json({posts:allBlog})
   })
   
   
@@ -104,13 +124,5 @@ blogRouter.post('/',async(c)=>{
   })
     
   
-  
-  blogRouter.get('bulk',async(c)=>{
-    const prisma = new PrismaClient({
-      datasourceUrl: c.env.DATABASE_URL,
-  }).$extends(withAccelerate())
-const allBlog=await prisma.post.findMany()
-    return c.json({posts:allBlog})
-  })
   
   
