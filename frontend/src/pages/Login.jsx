@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Landing from "./Landing";
+import { backendUrl } from "../config";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ function Login() {
     setErrorMessage("");
 
     try {
-      const response = await axios.post("http://localhost:3001/api/v1/signin", {
+      const response = await axios.post(`${backendUrl}/user/signin`, {
         email: email,
         password: password,
       });

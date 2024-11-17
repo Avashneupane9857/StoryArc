@@ -1,17 +1,20 @@
 import { useState } from "react";
 import Landing from "./Landing";
 import axios from "axios";
+import { backendUrl } from "../config";
 function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  console.log("this is backend url", backendUrl);
   const handleSignup = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/api/v1/signup", {
+      const response = await axios.post(`${backendUrl}/user/signup`, {
         name,
         email,
         password,
       });
+      console.log(response);
       if (response.status == 200) {
         console.log("Signup successful:", response.data);
         window.location.href = "/login";
