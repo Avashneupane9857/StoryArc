@@ -9,7 +9,11 @@ import { verify } from "hono/jwt";
 export const blogRouter=new Hono<{Bindings:{
     DATABASE_URL:string;
     JWT:string
-  }}>()
+  },
+    Variables:{
+      userId:string
+    } 
+}>()
 
 
 
@@ -25,16 +29,17 @@ export const blogRouter=new Hono<{Bindings:{
       c.status(401);
       return c.json({ error: "unauthorized" });
     }
+    //@ts-ignore
     c.set('userId', payload.id);
     await next()
   })
 
 
-  
+
 blogRouter.post('/',async(c)=>{
 
     const body=await c.req.json()
-    
+    const userId=c.get("userId")
     const prisma = new PrismaClient({
       datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate())
@@ -43,7 +48,7 @@ blogRouter.post('/',async(c)=>{
     data:{
        title:body.title,
        content:body.content,
-       authorId:"11",
+       authorId:userId,
     }
   })
   return c.json({
