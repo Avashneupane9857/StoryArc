@@ -32,7 +32,8 @@ userRouter.post('/signup',async(c)=>{
     const token=await sign({
   id:user.id
     },c.env.JWT)
-    return c.text(token)
+    return c.json({ token });
+
   }
   
   catch(e){
@@ -74,7 +75,8 @@ userRouter.post('/signup',async(c)=>{
     id:user.id
       },c.env.JWT)
   
-      return c.text(token)
+      return c.json({ token });
+
     
   }
   
